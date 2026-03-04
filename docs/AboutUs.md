@@ -42,7 +42,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### Gowri Sumesh Menon
 
-<img src="images/Gowrismenon.png" width="200px">
+<img src="images/gowrismenon.png" width="200px">
 
 [[github]([http://github.com/johndoe](https://github.com/Gowrismenon))]
 [[portfolio](team/johndoe.md)]
