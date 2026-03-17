@@ -39,6 +39,9 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         requireNonNull(newUserPrefs);
         setGuiSettings(newUserPrefs.getGuiSettings());
         setAddressBookFilePath(newUserPrefs.getAddressBookFilePath());
+        setPatientsFilePath(newUserPrefs.getPatientsFilePath());
+        setDoctorsFilePath(newUserPrefs.getDoctorsFilePath());
+        setScheduleFilePath(newUserPrefs.getScheduleFilePath());
     }
 
     public GuiSettings getGuiSettings() {
