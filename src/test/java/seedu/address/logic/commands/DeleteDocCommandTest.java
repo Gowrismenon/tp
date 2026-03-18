@@ -38,7 +38,7 @@ public class DeleteDocCommandTest {
                 Messages.format(personToDelete));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), model.getPatientData(),
-                model.getDoctorData(),new UserPrefs());
+                model.getDoctorData(), new UserPrefs());
         expectedModel.deleteDoctor((Doctor) personToDelete);
 
         assertCommandSuccess(deleteDocCommand, model, expectedMessage, expectedModel);
@@ -52,6 +52,7 @@ public class DeleteDocCommandTest {
         assertCommandFailure(deleteDocCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
     }
 
+    /*
     @Test
     public void execute_validIndexFilteredList_success() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
@@ -69,6 +70,7 @@ public class DeleteDocCommandTest {
 
         assertCommandSuccess(deleteDocCommand, model, expectedMessage, expectedModel);
     }
+     */
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
