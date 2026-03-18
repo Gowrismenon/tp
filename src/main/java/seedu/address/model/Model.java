@@ -85,16 +85,28 @@ public interface Model {
     /** Returns the AddressBook */
     ReadOnlyAddressBook getAddressBook();
 
+    /** Returns the PatientData */
+    ReadOnlyAddressBook getPatientData();
+
+    /** Returns the DoctorData */
+    ReadOnlyAddressBook getDoctorData();
+
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
      */
     boolean hasPerson(Person person);
 
     /**
-     * Deletes the given person.
-     * The person must exist in the address book.
+     * Deletes the given patient.
+     * The patient must exist in the address book.
      */
-    void deletePerson(Person target);
+    void deletePatient(Patient patient);
+
+    /**
+     * Deletes the given doctor.
+     * The doctor must exist in the address book.
+     */
+    void deleteDoctor(Doctor doctor);
 
     /**
      * Adds the given person.
