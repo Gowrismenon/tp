@@ -36,6 +36,7 @@ public class ScheduleManager {
             Map<String, Map<String, Map<String, String>>> data =
                     mapper.readValue(file, Map.class);
 
+
             // 🔍 find doctor (case-insensitive)
             Map<String, Map<String, String>> doctorSchedule = null;
 
@@ -115,11 +116,22 @@ public class ScheduleManager {
             File file = new File(FILE_PATH);
             Map<String, Object> data = mapper.readValue(file, Map.class);
 
-            Map<String, String> slots = getScheduleIgnoreCase(doctorName, date);
-            if (slots == null) {
-                throw new IOException("Doctor or date not found!");
+            for (String name : data.keySet()) {
+                if (name.equalsIgnoreCase(doctorName)) {
+                    Map<String, Object> doctorSchedule =
+                            (Map<String, Object>) data.get(name);
+
+                    if (!doctorSchedule.containsKey(date)) {
+                        throw new IOException("Date not found!");
+                    }
+
+                    Map<String, String> slots =
+                            (Map<String, String>) doctorSchedule.get(date);
+
+                    slots.put(time, patName); // modifies data directly ✅
+                    break;
+                }
             }
-            slots.put(time, patName);
 
             mapper.writerWithDefaultPrettyPrinter().writeValue(file, data);
 
