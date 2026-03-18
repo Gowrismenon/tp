@@ -128,6 +128,16 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public ReadOnlyAddressBook getPatientData() {
+        return patients;
+    }
+
+    @Override
+    public ReadOnlyAddressBook getDoctorData() {
+        return doctors;
+    }
+
+    @Override
     public boolean hasPerson(Person person) {
         requireNonNull(person);
         return addressBook.hasPerson(person);
