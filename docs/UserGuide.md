@@ -148,6 +148,32 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
+### Adding an appointment : `addappt`
+Adds an appointment on a specific date, at a specific time from a doctor's schedule.
+
+Format: `addappt d/DOCTORNAME n/PATIENTNAME date/YYYY-MM-DD time/HH:MM`
+
+* Books an appointment in the relevant doctor's schedule at the specified date and time 
+* Date must not fall beyond the 7 day range(counted from today's date)
+* Time must fall within operating hours(9am to 5pm)
+
+Examples: 
+* `addappt d/John Tan n/Jane date/2026-03-21 time/09:00` books an appointment for Jane in Dr John's schedule on 2026-03-21 at 9am, followed by 
+`viewsched d/John Tan date/2026-03-21` command will show the 9am slot as `Booked`.
+
+### Deleting an appointment : `delappt`
+Deletes an appointment on a specific date, at a specific time to a doctor's schedule.
+
+Format: `delappt d/DOCTORNAME n/PATIENTNAME date/YYYY-MM-DD time/HH:MM`
+
+* Deletes the appointment in the relevant doctor's schedule at the specified date and time
+* Date must not fall beyond the 7 day range(counted from today's date)
+* Time must fall within operating hours(9am to 5pm)
+
+Examples:
+* If the 9am slot for Dr John Tan on 2026-03-21 was booked, then `delappt d/John Tan n/Jane date/2026-03-21 time/09:00`
+followed by `viewsched d/John Tan date/2026-03-21` command will show the 9am slot as `Available`.
+
 ### Clearing all entries : `clear`
 
 Clears all entries from the address book.
