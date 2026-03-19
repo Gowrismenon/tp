@@ -1,7 +1,7 @@
 ---
   layout: default.md
-    title: "User Guide"
-    pageNav: 3
+  title: "User Guide"
+  pageNav: 3
 ---
 
 # CLInicDesk User Guide
@@ -31,11 +31,11 @@ CLInicDesk is optimized for use through a Command Line Interface (CLI) while sti
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : Lists all patients and doctors.
+   * `list` : Lists all patients and doctors.
 
-    * `adddoc n/John Doe p/98765432 e/johnd@doctor.com a/John street, block 123, #01-01` : Adds a doctor named `John Doe` to the application.
+   * `adddoc n/John Doe p/98765432 e/johnd@doctor.com a/John street, block 123, #01-01` : Adds a doctor named `John Doe` to the application.
 
-    * `deldoc 3` : Deletes the 3rd doctor shown in the current list.
+   * `deldoc 3` : Deletes the 3rd doctor shown in the current list.
 
     * `clear` : Deletes all contacts.
 
@@ -280,4 +280,5 @@ Action     | Format, Examples
 **Delete Doctor** | `deldoc INDEX`<br> e.g., `deldoc 3`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List**   | `list`
+**View Schedule** | `viewsched d/DOCTOR_NAME date/YYYY-MM-DD`<br> e.g., `viewsched d/John Tan date/2026-03-20`
 **Help**   | `help`
